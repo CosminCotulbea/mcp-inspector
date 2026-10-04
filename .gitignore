@@ -1,0 +1,7 @@
+.idea
+data/*
+!data/.gitkeep
+scripts/.env
+scripts/.secret-key
+scripts/nginx/.htpasswd
+scripts/docker-compose.hosts.yml
