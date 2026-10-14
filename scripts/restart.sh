@@ -7,7 +7,12 @@ cd scripts || exit
 . ./compose.sh
 . ./prepare.sh
 
-$COMPOSE restart
+if ! $COMPOSE restart; then
+    echo
+    echo "===== ERROR: restart failed ====="
+    echo
+    exit 1
+fi
 
 echo
 echo "===== Done! ====="

@@ -7,7 +7,12 @@ cd scripts || exit
 . ./compose.sh
 . ./prepare.sh
 
-$COMPOSE up -d
+if ! $COMPOSE up -d; then
+    echo
+    echo "===== ERROR: 'up -d' failed, containers not started ====="
+    echo
+    exit 1
+fi
 
 echo
 echo "===== Done! ====="
